@@ -1,0 +1,164 @@
+/* Styles globaux */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Assure une gestion uniforme des marges et des paddings */
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Police importée */
+    color: #333333; /* Couleur du texte principale */
+    background-color: #F5F5F5; /* Couleur de fond légère */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Assure que le corps prend toute la hauteur */
+}
+
+/* Section en-tête */
+header {
+    background-color: #FFFFFF; /* Couleur de fond blanc pour l'en-tête */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FF4B4B; /* Ligne rouge en bas de l'en-tête */
+}
+
+header .logo img {
+    height: 60px; /* Taille du logo */
+}
+
+nav ul {
+    list-style-type: none; /* Supprime les puces */
+    display: flex;
+    gap: 20px; /* Espace entre les éléments du menu */
+}
+
+nav ul li {
+    display: inline; /* Affiche les éléments du menu sur une seule ligne */
+}
+
+nav ul li a {
+    text-decoration: none; /* Supprime le soulignement des liens */
+    color: #333333; /* Couleur du texte */
+    font-weight: bold; /* Texte en gras */
+}
+
+nav ul li a:hover {
+    color: #FF4B4B; /* Couleur rouge lorsque la souris survole le lien */
+}
+
+/* Section de la bannière (Hero) */
+.hero {
+    background-color: #FF4B4B; /* Couleur de fond rouge */
+    color: #FFFFFF; /* Texte blanc */
+    text-align: center;
+    padding: 80px 20px; /* Espace autour du contenu */
+}
+
+.hero h1 {
+    font-size: 44px; /* Taille de la police du titre */
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px; /* Taille de la police du sous-titre */
+}
+
+/* Section des photos */
+.photos {
+    background-color: #FFFFFF;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.photos h2 {
+    color: #FF4B4B; /* Couleur du titre */
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.photo-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les images */
+}
+
+.photo-gallery img {
+    width: 300px; /* Largeur des images */
+    height: 200px; /* Hauteur des images */
+    object-fit: cover; /* Assure que l'image s'adapte bien au cadre */
+    border-radius: 10px; /* Coins arrondis */
+    border: 3px solid #FF4B4B; /* Bordure rouge */
+    transition: transform 0.3s ease; /* Effet de transition lors du survol */
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.05); /* Agrandissement léger au survol */
+}
+
+/* Section des vidéos */
+.videos {
+    background-color: #F5F5F5;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.videos h2 {
+    color: #FF4B4B;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.video-gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espace entre les vidéos */
+}
+
+video {
+    width: 400px;
+    height: 225px;
+    border-radius: 10px;
+    border: 3px solid #FF4B4B;
+}
+
+/* Section pied de page */
+footer {
+    background-color: #333333; /* Fond du pied de page */
+    color: #FFFFFF; /* Texte blanc */
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Assure que le footer reste en bas si le contenu est court */
+}
+
+/* Design réactif (Responsive) pour les petits écrans */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Empile les éléments en colonne */
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column; /* Menu en colonne sur petits écrans */
+        gap: 10px;
+    }
+
+    .hero h1 {
+        font-size: 32px; /* Taille du titre réduite sur mobile */
+    }
+
+    .hero p {
+        font-size: 18px; /* Taille du sous-titre réduite sur mobile */
+    }
+
+    .photo-gallery, .video-gallery {
+        flex-direction: column; /* Photos et vidéos en colonne sur mobile */
+        align-items: center;
+    }
+
+    .photo-gallery img, video {
+        width: 90%; /* Images et vidéos prennent 90% de la largeur de l'écran */
+        height: auto; /* Hauteur ajustée automatiquement */
+    }
+}
